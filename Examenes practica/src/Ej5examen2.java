@@ -29,6 +29,9 @@ public class Ej5examen2 {
 				do {
 					System.out.println("Introduzca un numero entre el 100 y el 200: " + x);
 					numero = in.nextInt();
+					if (numero < 100 || numero > 200) {
+						System.out.println("Has introducido el numero mal");
+					}
 				} while (numero < 100 || numero > 200);
 
 				while (numero != x) {
