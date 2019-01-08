@@ -19,37 +19,38 @@ public class Ej5examen2 {
 	public static void main(String[] args) {
 		Random r = new Random();
 		Scanner in = new Scanner(System.in);
-		int x = r.nextInt(200 - 100 + 1) + 100;
+		int x;
 		int numero;
 		int intentos = 1;
 		String respuesta;
 		do {
 			x = r.nextInt(200 - 100 + 1) + 100;
-		do {
 			do {
-				System.out.println("Introduzca un numero entre el 100 y el 200: " + x);
-				numero=in.nextInt();
-			} while (numero < 100 || numero > 200);
-
-			while (numero != x) {
-				intentos++;
 				do {
-					System.out.println("Introduzca un numero entre el 100 y el 200: ");
-					numero=in.nextInt();
+					System.out.println("Introduzca un numero entre el 100 y el 200: " + x);
+					numero = in.nextInt();
 				} while (numero < 100 || numero > 200);
 
-			}
-			if (numero == x) {
-				System.out.println("Has acertado, el numero a adivinar era " + x + " lo has acertado en " + intentos + " intentos" );
-			}
-			System.out.println("¿Quieres jugar de nuevo?  (s/n)");
+				while (numero != x) {
+					intentos++;
+					do {
+						System.out.println("Introduzca un numero entre el 100 y el 200: ");
+						numero = in.nextInt();
+					} while (numero < 100 || numero > 200);
+
+				}
+				if (numero == x) {
+					System.out.println("Has acertado, el numero a adivinar era " + x + " lo has acertado en " + intentos
+							+ " intentos");
+				}
+				System.out.println("¿Quieres jugar de nuevo?  (s/n)");
+				respuesta = in.nextLine();
+
+			} while (respuesta.equalsIgnoreCase("s"));
 			respuesta = in.nextLine();
-			
+
 		} while (respuesta.equalsIgnoreCase("s"));
-		respuesta = in.nextLine();
-		
-		}while (respuesta.equalsIgnoreCase("s"));
-		
+
 		in.close();
 	}
 }
